@@ -1,11 +1,10 @@
 services:
-  - type: web
-    name: furkan-web
-    env: python
-    plan: free  # Render'da başlangıç için Free plan iş görür. Daha sonra yükseltebilirsin.
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn app:app"
-    envVars:
-      - key: OPENAI_MODEL
-        value: gpt-4o-mini
-      # OPENAI_API_KEY'i buraya KESİNLİKLE yazma. Panelden gizli olarak ekleyeceğiz.
+- type: web
+name: furkan-web
+env: python
+plan: free
+buildCommand: "pip install -r requirements.txt"
+startCommand: "gunicorn app:app"
+envVars:
+- key: OPENAI_MODEL
+value: gpt-4o-mini
